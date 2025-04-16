@@ -1,0 +1,338 @@
+{
+   "ua": [
+      [
+         {
+            "key": "'",
+            "color": "purple",
+            "type": "keyboard__letter",
+            "keyCode": "Backquote"
+         },
+         {
+            "key": "1",
+            "color": "purple",
+            "type": "keyboard__letter",
+            "keyCode": "Digit1"
+         },
+         {
+            "key": "2",
+            "color": "purple",
+            "type": "keyboard__letter",
+            "keyCode": "Digit2"
+         },
+         {
+            "key": "3",
+            "color": "green",
+            "type": "keyboard__letter",
+            "keyCode": "Digit3"
+         },
+         {
+            "key": "4",
+            "color": "red",
+            "type": "keyboard__letter",
+            "keyCode": "Digit4"
+         },
+         {
+            "key": "5",
+            "color": "blue",
+            "type": "keyboard__letter",
+            "keyCode": "Digit5"
+         },
+         {
+            "key": "6",
+            "color": "blue",
+            "type": "keyboard__letter",
+            "keyCode": "Digit6"
+         },
+         {
+            "key": "7",
+            "color": "yellow",
+            "type": "keyboard__letter",
+            "keyCode": "Digit7"
+         },
+         {
+            "key": "8",
+            "color": "red",
+            "type": "keyboard__letter",
+            "keyCode": "Digit8"
+         },
+         {
+            "key": "9",
+            "color": "green",
+            "type": "keyboard__letter",
+            "keyCode": "Digit9"
+         },
+         {
+            "key": "0",
+            "color": "purple",
+            "type": "keyboard__letter",
+            "keyCode": "Digit0"
+         },
+         {
+            "key": "-",
+            "color": "purple",
+            "type": "keyboard__letter",
+            "keyCode": "Minus"
+         },
+         {
+            "key": "=",
+            "color": "purple",
+            "type": "keyboard__letter",
+            "keyCode": "Equal"
+         },
+         {
+            "key": "<-",
+            "type": "functional_btn",
+            "color": "grey",
+            "keyCode": "Backspace"
+         }
+      ],
+      [
+         {
+            "key": "Tab",
+            "type": "functional_btn",
+            "color": "grey",
+            "keyCode": "Tab"
+         },
+         {
+            "key": "й",
+            "color": "purple",
+            "type": "keyboard__letter",
+            "keyCode": "KeyQ"
+         },
+         {
+            "key": "ц",
+            "color": "green",
+            "type": "keyboard__letter",
+            "keyCode": "KeyW"
+         },
+         {
+            "key": "у",
+            "color": "red",
+            "type": "keyboard__letter",
+            "keyCode": "KeyE"
+         },
+         {
+            "key": "к",
+            "color": "blue",
+            "type": "keyboard__letter",
+            "keyCode": "KeyR"
+         },
+         {
+            "key": "е",
+            "color": "blue",
+            "type": "keyboard__letter",
+            "keyCode": "KeyT"
+         },
+         {
+            "key": "н",
+            "color": "yellow",
+            "type": "keyboard__letter",
+            "keyCode": "KeyY"
+         },
+         {
+            "key": "г",
+            "color": "yellow",
+            "type": "keyboard__letter",
+            "keyCode": "KeyU"
+         },
+         {
+            "key": "ш",
+            "color": "red",
+            "type": "keyboard__letter",
+            "keyCode": "KeyI"
+         },
+         {
+            "key": "щ",
+            "color": "green",
+            "type": "keyboard__letter",
+            "keyCode": "KeyO"
+         },
+         {
+            "key": "з",
+            "color": "purple",
+            "type": "keyboard__letter",
+            "keyCode": "KeyP"
+         },
+         {
+            "key": "х",
+            "color": "purple",
+            "type": "keyboard__letter",
+            "keyCode": "BracketLeft"
+         },
+         {
+            "key": "ї",
+            "color": "purple",
+            "type": "keyboard__letter",
+            "keyCode": "BracketRight"
+         },
+         {
+            "key": "\\",
+            "color": "grey",
+            "type": "keyboard__letter",
+            "keyCode": "Backslash"
+         }
+      ],
+      [
+         {
+            "key": "Caps",
+            "type": "functional_btn",
+            "color": "grey",
+            "keyCode": "CapsLock"
+         },
+         {
+            "key": "ф",
+            "color": "purple",
+            "type": "keyboard__letter",
+            "keyCode": "KeyA"
+         },
+         {
+            "key": "і",
+            "color": "green",
+            "type": "keyboard__letter",
+            "keyCode": "KeyS"
+         },
+         {
+            "key": "в",
+            "color": "red",
+            "type": "keyboard__letter",
+            "keyCode": "KeyD"
+         },
+         {
+            "key": "а",
+            "color": "blue",
+            "type": "keyboard__letter",
+            "keyCode": "KeyF"
+         },
+         {
+            "key": "п",
+            "color": "blue",
+            "type": "keyboard__letter",
+            "keyCode": "KeyG"
+         },
+         {
+            "key": "р",
+            "color": "yellow",
+            "type": "keyboard__letter",
+            "keyCode": "KeyH"
+         },
+         {
+            "key": "о",
+            "color": "yellow",
+            "type": "keyboard__letter",
+            "keyCode": "KeyJ"
+         },
+         {
+            "key": "л",
+            "color": "red",
+            "type": "keyboard__letter",
+            "keyCode": "KeyK"
+         },
+         {
+            "key": "д",
+            "color": "green",
+            "type": "keyboard__letter",
+            "keyCode": "KeyL"
+         },
+         {
+            "key": "ж",
+            "color": "purple",
+            "type": "keyboard__letter",
+            "keyCode": "Semicolon"
+         },
+         {
+            "key": "є",
+            "color": "purple",
+            "type": "keyboard__letter",
+            "keyCode": "Quote"
+         },
+         {
+            "key": "Enter",
+            "type": "functional_btn",
+            "color": "grey",
+            "keyCode": "Enter"
+         }
+      ],
+      [
+         {
+            "key": "Shift L",
+            "type": "functional_btn",
+            "color": "grey",
+            "keyCode": "ShiftLeft"
+         },
+         {
+            "key": "я",
+            "color": "purple",
+            "type": "keyboard__letter",
+            "keyCode": "KeyZ"
+         },
+         {
+            "key": "ч",
+            "color": "green",
+            "type": "keyboard__letter",
+            "keyCode": "KeyX"
+         },
+         {
+            "key": "с",
+            "color": "red",
+            "type": "keyboard__letter",
+            "keyCode": "KeyC"
+         },
+         {
+            "key": "м",
+            "color": "blue",
+            "type": "keyboard__letter",
+            "keyCode": "KeyV"
+         },
+         {
+            "key": "и",
+            "color": "blue",
+            "type": "keyboard__letter",
+            "keyCode": "KeyB"
+         },
+         {
+            "key": "т",
+            "color": "yellow",
+            "type": "keyboard__letter",
+            "keyCode": "KeyN"
+         },
+         {
+            "key": "ь",
+            "color": "yellow",
+            "type": "keyboard__letter",
+            "keyCode": "KeyM"
+         },
+         {
+            "key": "б",
+            "color": "red",
+            "type": "keyboard__letter",
+            "keyCode": "Comma"
+         },
+         {
+            "key": "ю",
+            "color": "green",
+            "type": "keyboard__letter",
+            "keyCode": "Period"
+         },
+         {
+            "key": ".",
+            "color": "purple",
+            "type": "keyboard__letter",
+            "keyCode": "Slash"
+         },
+         {
+            "key": "Shift R",
+            "type": "functional_btn",
+            "color": "grey",
+            "keyCode": "ShiftRight"
+         }
+      ],
+      [
+         {
+            "key": " ",
+            "type": "functional_btn",
+            "color": "grey",
+            "keyCode": "Space"
+         }
+      ]
+   ]
+}

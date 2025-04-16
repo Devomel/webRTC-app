@@ -1,0 +1,22 @@
+[data-theme="light"] {
+   --bg-color: rgb(243, 234, 209);
+   --text-color: rgba(0, 0, 0, 0.651);
+   --text-active-color: rgba(7, 56, 10, 0.699);
+   --border-color: rgba(165, 42, 42, 0.24);
+   --modal-bg-color: rgba(128, 128, 128, 0.205);
+}
+
+[data-theme="dark"] {
+   --bg-color: rgba(0, 0, 0, 0.945);
+   --text-color: white;
+   --text-active-color: white;
+   --border-color: rgba(128, 128, 128, 0.418);
+   --modal-bg-color: rgba(128, 128, 128, 0.164);
+}
+
+body {
+   background: var(--bg-color);
+   background-size: 100% 100%;
+   color: var(--text-color);
+   transition: 1s;
+}

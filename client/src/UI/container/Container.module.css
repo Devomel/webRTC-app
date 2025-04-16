@@ -1,0 +1,14 @@
+.container {
+   display: flex;
+   flex-direction: column;
+   max-width: min(93vw, 1140px);
+   min-height: 100svh;
+   flex-grow: 1;
+}
+
+.wrapper {
+   display: flex;
+   min-width: 100%;
+   align-items: center;
+   justify-content: center;
+}

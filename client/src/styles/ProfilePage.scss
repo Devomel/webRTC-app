@@ -1,0 +1,8 @@
+.profile {
+   flex-grow: 1;
+   display: grid;
+   grid-template-columns: 1fr 2fr;
+   grid-template-rows: 2fr 1fr;
+   gap: 20px;
+   padding-bottom: 20px;
+}
