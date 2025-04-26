@@ -92,33 +92,56 @@ const Main = () => {
    const consumerTransport = useRef<any>()
    const consumer = useRef<any>();
    const producer = useRef<any>();
-   socket.on("connection-success", ({ socketId }) => {
-      console.log(socketId)
+   const isProducer = useRef(false)
+   socket.on("connection-success", ({ socketId, existsProducer }) => {
+      console.log(socketId, existsProducer)
    })
 
-   const streamSuccess = async (stream: MediaStream) => {
+   const streamSuccess = (stream: MediaStream) => {
       if (localVideoRef.current) localVideoRef.current.srcObject = stream
       const track = stream.getVideoTracks()[0];
       params.current.track = track
-
+      goConnect("producer")
    }
    const getLocalVideo = () => {
       navigator.mediaDevices.getDisplayMedia({ video: true, audio: true })
          .then(streamSuccess)
          .catch(error => console.log(error.message))
    }
+   const goConsume = () => {
+      goConnect("consumer")
+   }
+   const goConnect = (producerOrConsumer: string) => {
+      isProducer.current = producerOrConsumer === "producer";
+      if (device.current) {
+         goCreateTransport()
+      } else {
+         getRTPCapabilities()
+      }
+
+   }
    const getRTPCapabilities = () => {
-      socket.emit("getRTPCapabilities", (data: any) => {
+      socket.emit("createRoom", (data: any) => {
          console.log(JSON.stringify(data))
          rtpCapabilities.current = data.rtpCapabilities
+         createDevice()
       })
    }
+   const goCreateTransport = () => {
+      if (isProducer.current) {
+         createSendTransport()
+      } else {
+         createRecieveTransport()
+      }
+   }
+
    const createDevice = async () => {
       try {
          device.current = new mediasoupClient.Device()
          await device.current.load({
             routerRtpCapabilities: rtpCapabilities.current
          })
+         goCreateTransport()
          console.log(device.current.rtpCapabilities)
       } catch (error) {
          console.log(error)
@@ -160,10 +183,10 @@ const Main = () => {
                errback(error)
             }
          })
-
+         connectSendTransport()
       })
    }
-   const connectSendTransport = async () => {
+   async function connectSendTransport() {
       try {
          producer.current = await producerTransport.current.produce(params.current)
          console.log("producer", producer.current)
@@ -200,6 +223,7 @@ const Main = () => {
                errback(error)
             }
          })
+         connectRecvTransport()
       })
    }
    const connectRecvTransport = async () => {
@@ -243,19 +267,10 @@ const Main = () => {
             </div>
          </div>
 
-         <div style={buttonContainerStyle}>
-            <button style={buttonStyle} onClick={getLocalVideo} >1. Get Local Video</button>
-         </div>
-         <div style={buttonContainerStyle}>
-            <button style={buttonStyle} onClick={getRTPCapabilities}>2. Get Rtp Capabilities</button>
-            <button style={buttonStyle} onClick={createDevice}>3. Create Device</button>
-         </div>
-         <div style={buttonContainerStyle}>
-            <button style={buttonStyle} onClick={createSendTransport}>4. Create Send Transport</button>
-            <button style={buttonStyle} onClick={connectSendTransport}>5. Connect Send Transport & Produce</button>
-            <button style={buttonStyle} onClick={createRecieveTransport}>6. Create Recv Transport</button>
-            <button style={buttonStyle} onClick={connectRecvTransport}>7. Connect Recv Transport & Consume</button>
-         </div>
+
+         <button style={buttonStyle} onClick={getLocalVideo} >Publish</button>
+         <button style={buttonStyle} onClick={goConsume}>Consume</button>
+
       </div>
    );
 };

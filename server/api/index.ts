@@ -2,7 +2,7 @@ import * as mediasoup from "mediasoup";
 import dotenv from 'dotenv';
 import express from 'express';
 import cors from 'cors';
-import fs from "fs"
+import fs, { exists } from "fs"
 import cookieParser from 'cookie-parser';
 import router from './router/index';
 import errorMiddleware from './middlewares/error-middleware';
@@ -83,19 +83,27 @@ let consumer: Consumer | undefined;
 peers.on("connection", async (socket) => {
    console.log(socket.id);
    socket.emit("connection-success", {
-      socketId: socket.id
+      socketId: socket.id,
+      existsProducer: !!producer
    });
 
    socket.on("disconnect", () => {
       console.log("user disconnected");
    });
+   socket.on("createRoom", async (callback) => {
+      if (!mediasoupRouter) {
+         mediasoupRouter = await worker.createRouter({ mediaCodecs });
+      }
+      getRtpCapabilities(callback)
+   });
 
+   function getRtpCapabilities(callback: any) {
+      var rtpCapabilities = mediasoupRouter.rtpCapabilities;
+      callback({ rtpCapabilities });
+   }
    mediasoupRouter = await worker.createRouter({ mediaCodecs });
 
-   socket.on("getRTPCapabilities", (callback) => {
-      const rtpCapabilities = mediasoupRouter.rtpCapabilities;
-      callback({ rtpCapabilities });
-   });
+
 
    socket.on("createWebRtcTransport", async ({ sender }, callback) => {
       try {
